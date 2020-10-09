@@ -41,7 +41,7 @@ public class Game extends JFrame {
 	private int xCount = 0;
 	private int oCount = 0;
 
-	JLabel lblX, lblO;
+	JLabel lblX, lblO, lblTTT;
 	JButton btnTTT1, btnTTT2, btnTTT3, btnTTT4, btnTTT5, btnTTT6, btnTTT7, btnTTT8, btnTTT9;
 	
 	/**
@@ -64,12 +64,12 @@ public class Game extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblAc = new JLabel("AC");
-		lblAc.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAc.setFont(new Font("Calibri", Font.BOLD, 18));
-		lblAc.setForeground(Color.ORANGE);
-		lblAc.setBounds(104, 0, 221, 36);
-		panel.add(lblAc);
+		/*JLabel*/ lblTTT = new JLabel("Le toca a X");
+		lblTTT.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTTT.setFont(new Font("Calibri", Font.BOLD, 18));
+		lblTTT.setForeground(Color.ORANGE);
+		lblTTT.setBounds(104, 0, 221, 36);
+		panel.add(lblTTT);
 		
 		/*JButton*/ btnTTT1 = new JButton("O");
 		btnTTT1.addActionListener(new ActionListener() {
@@ -254,6 +254,33 @@ public class Game extends JFrame {
 		contentPane.add(btnTTT9);
 		
 		JButton btnReset = new JButton("RESET");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				btnTTT1.setText(null);
+				btnTTT2.setText(null);
+				btnTTT3.setText(null);
+				btnTTT4.setText(null);
+				btnTTT5.setText(null);
+				btnTTT6.setText(null);
+				btnTTT7.setText(null);
+				btnTTT8.setText(null);
+				btnTTT9.setText(null);
+				
+				Enabled();
+				
+				btnTTT1.setBackground(Color.LIGHT_GRAY);
+				btnTTT2.setBackground(Color.LIGHT_GRAY);
+				btnTTT3.setBackground(Color.LIGHT_GRAY);
+				btnTTT4.setBackground(Color.LIGHT_GRAY);
+				btnTTT5.setBackground(Color.LIGHT_GRAY);
+				btnTTT6.setBackground(Color.LIGHT_GRAY);
+				btnTTT7.setBackground(Color.LIGHT_GRAY);
+				btnTTT8.setBackground(Color.LIGHT_GRAY);
+				btnTTT9.setBackground(Color.LIGHT_GRAY);
+				
+			}
+		});
 		btnReset.setFont(new Font("Calibri", Font.BOLD, 18));
 		btnReset.setBounds(230, 247, 80, 30);
 		contentPane.add(btnReset);
@@ -305,14 +332,46 @@ public class Game extends JFrame {
 	private void gameScore() {
 		lblX.setText(String.valueOf(xCount));
 		lblO.setText(String.valueOf(oCount));
+		
+	}
+	
+	private void Enabled() {
+		
+		btnTTT1.setEnabled(true);
+		btnTTT2.setEnabled(true);
+		btnTTT3.setEnabled(true);
+		btnTTT4.setEnabled(true);
+		btnTTT5.setEnabled(true);
+		btnTTT6.setEnabled(true);
+		btnTTT7.setEnabled(true);
+		btnTTT8.setEnabled(true);
+		btnTTT9.setEnabled(true);
+		
+	}
+	
+	private void Disabled() {
+		
+		btnTTT1.setEnabled(false);
+		btnTTT2.setEnabled(false);
+		btnTTT3.setEnabled(false);
+		btnTTT4.setEnabled(false);
+		btnTTT5.setEnabled(false);
+		btnTTT6.setEnabled(false);
+		btnTTT7.setEnabled(false);
+		btnTTT8.setEnabled(false);
+		btnTTT9.setEnabled(false);
+		
 	}
 	
 	private void choosePlayer() {
 		if(startGame.equalsIgnoreCase("X")) {
 			startGame = "O";
+			lblTTT.setText("Es turno de O");
+			
 		}
 		else {
 			startGame = "X";
+			lblTTT.setText("Es turno de X");
 		}
 	}
 	
@@ -330,13 +389,14 @@ public class Game extends JFrame {
 		String b8 = btnTTT8.getText();
 		String b9 = btnTTT9.getText();
 		
-		if (/*btnTTT1.getText().equals("X") && btnTTT2.getText().equals("X") && btnTTT3.getText().equals("X")*/(b1 == ("X")) && (b2 == ("X")) && (b3 == ("X"))/*btnTTT1.equals(String.valueOf("X")) && btnTTT2.equals(String.valueOf("X")) && btnTTT3.equals(String.valueOf("X"))*/) {
+		if ((b1 == ("X")) && (b2 == ("X")) && (b3 == ("X"))) {
 			
 			JOptionPane.showMessageDialog(this, "Player X win", "Tic Tac Toe",
 					JOptionPane.INFORMATION_MESSAGE);
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT1.setBackground(Color.ORANGE);
 			btnTTT2.setBackground(Color.ORANGE);
@@ -351,6 +411,7 @@ public class Game extends JFrame {
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT4.setBackground(Color.ORANGE);
 			btnTTT5.setBackground(Color.ORANGE);
@@ -365,6 +426,7 @@ public class Game extends JFrame {
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT7.setBackground(Color.ORANGE);
 			btnTTT8.setBackground(Color.ORANGE);
@@ -379,6 +441,7 @@ public class Game extends JFrame {
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT1.setBackground(Color.ORANGE);
 			btnTTT4.setBackground(Color.ORANGE);
@@ -393,6 +456,7 @@ public class Game extends JFrame {
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT2.setBackground(Color.ORANGE);
 			btnTTT5.setBackground(Color.ORANGE);
@@ -407,6 +471,7 @@ public class Game extends JFrame {
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT3.setBackground(Color.ORANGE);
 			btnTTT6.setBackground(Color.ORANGE);
@@ -421,6 +486,7 @@ public class Game extends JFrame {
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT1.setBackground(Color.ORANGE);
 			btnTTT5.setBackground(Color.ORANGE);
@@ -435,6 +501,7 @@ public class Game extends JFrame {
 			
 			xCount++;
 			gameScore();
+			Disabled();
 			
 			btnTTT3.setBackground(Color.ORANGE);
 			btnTTT5.setBackground(Color.ORANGE);
