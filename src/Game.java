@@ -79,9 +79,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT1.setForeground(Color.RED);
+					btnTTT1.setEnabled(false);
 				}
 				else {
 					btnTTT1.setForeground(Color.MAGENTA);
+					btnTTT1.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -99,9 +101,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT2.setForeground(Color.RED);
+					btnTTT2.setEnabled(false);
 				}
 				else {
 					btnTTT2.setForeground(Color.MAGENTA);
+					btnTTT2.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -118,9 +122,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT3.setForeground(Color.RED);
+					btnTTT3.setEnabled(false);
 				}
 				else {
 					btnTTT3.setForeground(Color.MAGENTA);
+					btnTTT3.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -138,9 +144,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT4.setForeground(Color.RED);
+					btnTTT4.setEnabled(false);
 				}
 				else {
 					btnTTT4.setForeground(Color.MAGENTA);
+					btnTTT4.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -158,9 +166,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT5.setForeground(Color.RED);
+					btnTTT5.setEnabled(false);
 				}
 				else {
 					btnTTT5.setForeground(Color.MAGENTA);
+					btnTTT5.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -178,9 +188,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT6.setForeground(Color.RED);
+					btnTTT6.setEnabled(false);
 				}
 				else {
 					btnTTT6.setForeground(Color.MAGENTA);
+					btnTTT6.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -198,9 +210,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT7.setForeground(Color.RED);
+					btnTTT7.setEnabled(false);
 				}
 				else {
 					btnTTT7.setForeground(Color.MAGENTA);
+					btnTTT7.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -219,9 +233,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT8.setForeground(Color.RED);
+					btnTTT8.setEnabled(false);
 				}
 				else {
 					btnTTT8.setForeground(Color.MAGENTA);
+					btnTTT8.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -240,9 +256,11 @@ public class Game extends JFrame {
 				
 				if(startGame.equalsIgnoreCase("X")) {
 					btnTTT9.setForeground(Color.RED);
+					btnTTT9.setEnabled(false);
 				}
 				else {
 					btnTTT9.setForeground(Color.MAGENTA);
+					btnTTT9.setEnabled(false);
 				}
 				choosePlayer();
 				WinningGame();
@@ -651,7 +669,16 @@ public class Game extends JFrame {
 			
 		}
 		
-		/*if ((((b1 == "") && (b2 == "") && (b3 == "") && (b4 == "") && (b5 == "") && (b6 == "") && (b7 == "") && (b8 == "") && (b9 == ""))) 
+		/*if ( ( ((b1 != "")) && ((b2 != "")) && ((b3 != "")) 
+			&& ((b4 != "")) && ((b5 != "")) && ((b6 != ""))
+			&& ((b7 != "")) && ((b8 != "")) && ((b9 != "")) ) 
+				) {
+			JOptionPane.showMessageDialog(this, "Empate", "Tic Tac Toe",
+					JOptionPane.INFORMATION_MESSAGE);
+			Disabled();
+		}*/
+		
+		/*if (((!(b1 == null) && !(b2 == null) && !(b3 == null) && !(b4 == "") && !(b5 == "") && !(b6 == "") && !(b7 == "") && !(b8 == "") && !(b9 == ""))) 
 				&& (!(btnTTT1.isEnabled()) && (btnTTT2.isEnabled()) && (btnTTT3.isEnabled()) 
 				&& (btnTTT4.isEnabled()) && (btnTTT5.isEnabled()) && (btnTTT6.isEnabled()) 
 				&& (btnTTT7.isEnabled()) && (btnTTT8.isEnabled()) && (btnTTT9.isEnabled()))) {
@@ -667,6 +694,13 @@ public class Game extends JFrame {
 			btnTTT5.setBackground(Color.ORANGE);
 			btnTTT7.setBackground(Color.ORANGE);
 			
+		}*/
+		
+		/*if ( ((!btnTTT1.getText().equals("")) && (!btnTTT2.getText().equals("")) && (!btnTTT3.getText().equals("")) 
+			&& (!btnTTT4.getText().equals("")) && (!btnTTT5.getText().equals("")) && (!btnTTT6.getText().equals("")) 
+			&& (!btnTTT7.getText().equals("")) && (!btnTTT8.getText().equals("")) && (!btnTTT9.getText().equals("")) )) {
+			JOptionPane.showMessageDialog(this, "Empate", "Tic Tac Toe",
+					JOptionPane.INFORMATION_MESSAGE);
 		}*/
 		
 		
