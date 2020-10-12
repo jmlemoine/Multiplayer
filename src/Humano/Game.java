@@ -1,3 +1,4 @@
+package Humano;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -12,6 +13,9 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.border.EtchedBorder;
+
+import Main.Main;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -19,12 +23,12 @@ public class Game extends JFrame {
 
 	private JPanel contentPane;
 	
+	//static // = new Game();
 	
-
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -35,7 +39,7 @@ public class Game extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 	
 	private String startGame = "X";
 	private int xCount = 0;
@@ -306,11 +310,16 @@ public class Game extends JFrame {
 		JButton btnStop = new JButton("EXIT");
 		btnStop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame frame = new JFrame("Exit");
+				/*JFrame frame = new JFrame("Exit");
 				if (JOptionPane.showConfirmDialog(frame, "Do you want exit?",
 						"Tic Tac Toe", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
 					System.exit(0);
-				}
+				}*/
+				
+				Main mn = new Main();
+				mn.setVisible(true);
+				dispose();
+				
 			}
 		});
 		btnStop.setFont(new Font("Calibri", Font.BOLD, 18));
