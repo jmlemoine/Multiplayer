@@ -1,19 +1,27 @@
 package Main;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
+import Computador.demo;
 import Humano.Game;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.GridLayout;
 
 public class Main extends JFrame {
 
@@ -40,7 +48,12 @@ public class Main extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	
+	
 	public Main() {
+		
+		
 
 		setTitle("Tic Tac Toe");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,6 +76,17 @@ public class Main extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnHumanoVsComputador = new JButton("Humano Vs. Computador");
+		btnHumanoVsComputador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				
+				demo dm = new demo();
+				dm.setVisible(true);
+				dispose();
+				
+				
+			}
+		});
 		btnHumanoVsComputador.setFont(new Font("Calibri", Font.BOLD, 18));
 		btnHumanoVsComputador.setBounds(36, 128, 228, 31);
 		contentPane.add(btnHumanoVsComputador);
@@ -82,4 +106,5 @@ public class Main extends JFrame {
 		btnSalir.setBounds(320, 195, 89, 40);
 		contentPane.add(btnSalir);
 	}
+	
 }

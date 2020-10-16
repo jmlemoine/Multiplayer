@@ -23,24 +23,9 @@ public class Game extends JFrame {
 
 	private JPanel contentPane;
 	
-	//static // = new Game();
-	
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Game frame = new Game();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-	
 	private String startGame = "X";
 	private int xCount = 0;
 	private int oCount = 0;
@@ -68,14 +53,14 @@ public class Game extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		/*JLabel*/ lblTTT = new JLabel("Le toca a X");
+		lblTTT = new JLabel("Es turno de X");
 		lblTTT.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTTT.setFont(new Font("Calibri", Font.BOLD, 18));
 		lblTTT.setForeground(Color.ORANGE);
 		lblTTT.setBounds(104, 0, 221, 36);
 		panel.add(lblTTT);
 		
-		/*JButton*/ btnTTT1 = new JButton(/*"O"*/);
+		btnTTT1 = new JButton();
 		btnTTT1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -97,7 +82,7 @@ public class Game extends JFrame {
 		btnTTT1.setBounds(10, 56, 50, 50);
 		contentPane.add(btnTTT1);
 		
-		/*JButton*/ btnTTT2 = new JButton(/*"O"*/);
+		btnTTT2 = new JButton();
 		btnTTT2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -119,7 +104,7 @@ public class Game extends JFrame {
 		btnTTT2.setBounds(70, 56, 50, 50);
 		contentPane.add(btnTTT2);
 		
-		/*JButton*/ btnTTT3 = new JButton(/*"O"*/);
+		btnTTT3 = new JButton();
 		btnTTT3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnTTT3.setText(startGame);
@@ -140,7 +125,7 @@ public class Game extends JFrame {
 		btnTTT3.setBounds(130, 56, 50, 50);
 		contentPane.add(btnTTT3);
 		
-		/*JButton*/ btnTTT4 = new JButton(/*"O"*/);
+		btnTTT4 = new JButton();
 		btnTTT4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -162,7 +147,7 @@ public class Game extends JFrame {
 		btnTTT4.setBounds(10, 117, 50, 50);
 		contentPane.add(btnTTT4);
 		
-		/*JButton*/ btnTTT5 = new JButton(/*"O"*/);
+		btnTTT5 = new JButton();
 		btnTTT5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -184,7 +169,7 @@ public class Game extends JFrame {
 		btnTTT5.setBounds(70, 117, 50, 50);
 		contentPane.add(btnTTT5);
 		
-		/*JButton*/ btnTTT6 = new JButton(/*"O"*/);
+		btnTTT6 = new JButton();
 		btnTTT6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -206,7 +191,7 @@ public class Game extends JFrame {
 		btnTTT6.setBounds(130, 117, 50, 50);
 		contentPane.add(btnTTT6);
 		
-		/*JButton*/ btnTTT7 = new JButton(/*"O"*/);
+		btnTTT7 = new JButton();
 		btnTTT7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -229,7 +214,7 @@ public class Game extends JFrame {
 		btnTTT7.setBounds(10, 178, 50, 50);
 		contentPane.add(btnTTT7);
 		
-		/*JButton*/ btnTTT8 = new JButton(/*"O"*/);
+		btnTTT8 = new JButton();
 		btnTTT8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -252,7 +237,7 @@ public class Game extends JFrame {
 		btnTTT8.setBounds(70, 178, 50, 50);
 		contentPane.add(btnTTT8);
 		
-		/*JButton*/ btnTTT9 = new JButton(/*"O"*/);
+		btnTTT9 = new JButton();
 		btnTTT9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
@@ -310,11 +295,6 @@ public class Game extends JFrame {
 		JButton btnStop = new JButton("EXIT");
 		btnStop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*JFrame frame = new JFrame("Exit");
-				if (JOptionPane.showConfirmDialog(frame, "Do you want exit?",
-						"Tic Tac Toe", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
-					System.exit(0);
-				}*/
 				
 				Main mn = new Main();
 				mn.setVisible(true);
@@ -342,21 +322,20 @@ public class Game extends JFrame {
 		lblPlayerO.setBounds(10, 57, 79, 14);
 		panel_1.add(lblPlayerO);
 		
-		/*JLabel*/ lblX = new JLabel(/*"XXXXXX"*/);
+		lblX = new JLabel();
 		lblX.setFont(new Font("Calibri", Font.BOLD, 18));
 		lblX.setBounds(123, 11, 67, 14);
 		panel_1.add(lblX);
 		
-		/*JLabel*/ lblO = new JLabel(/*"OOOOO"*/);
+		lblO = new JLabel();
 		lblO.setFont(new Font("Calibri", Font.BOLD, 18));
 		lblO.setBounds(123, 57, 67, 14);
 		panel_1.add(lblO);
 		gameScore();
 	}
 	
-	//private JLable = lblX;
-	
 	private void gameScore() {
+		
 		lblX.setText(String.valueOf(xCount));
 		lblO.setText(String.valueOf(oCount));
 		
@@ -391,6 +370,7 @@ public class Game extends JFrame {
 	}
 	
 	private void choosePlayer() {
+		
 		if(startGame.equalsIgnoreCase("X")) {
 			startGame = "O";
 			lblTTT.setText("Es turno de O");
@@ -400,6 +380,7 @@ public class Game extends JFrame {
 			startGame = "X";
 			lblTTT.setText("Es turno de X");
 		}
+		
 	}
 	
 	private void WinningGame() {
@@ -546,18 +527,6 @@ public class Game extends JFrame {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		if ((b1 == ("O")) && (b2 == ("O")) && (b3 == ("O"))) {
 			
 			JOptionPane.showMessageDialog(this, "Player O win", "Tic Tac Toe",
@@ -677,42 +646,6 @@ public class Game extends JFrame {
 			btnTTT7.setBackground(Color.ORANGE);
 			
 		}
-		
-		/*if ( ( ((b1 != "")) && ((b2 != "")) && ((b3 != "")) 
-			&& ((b4 != "")) && ((b5 != "")) && ((b6 != ""))
-			&& ((b7 != "")) && ((b8 != "")) && ((b9 != "")) ) 
-				) {
-			JOptionPane.showMessageDialog(this, "Empate", "Tic Tac Toe",
-					JOptionPane.INFORMATION_MESSAGE);
-			Disabled();
-		}*/
-		
-		/*if (((!(b1 == null) && !(b2 == null) && !(b3 == null) && !(b4 == "") && !(b5 == "") && !(b6 == "") && !(b7 == "") && !(b8 == "") && !(b9 == ""))) 
-				&& (!(btnTTT1.isEnabled()) && (btnTTT2.isEnabled()) && (btnTTT3.isEnabled()) 
-				&& (btnTTT4.isEnabled()) && (btnTTT5.isEnabled()) && (btnTTT6.isEnabled()) 
-				&& (btnTTT7.isEnabled()) && (btnTTT8.isEnabled()) && (btnTTT9.isEnabled()))) {
-			
-			JOptionPane.showMessageDialog(this, "Nobody win", "Tic Tac Toe",
-					JOptionPane.INFORMATION_MESSAGE);
-			
-			oCount++;
-			gameScore();
-			Disabled();
-			
-			btnTTT3.setBackground(Color.ORANGE);
-			btnTTT5.setBackground(Color.ORANGE);
-			btnTTT7.setBackground(Color.ORANGE);
-			
-		}*/
-		
-		/*if ( ((!btnTTT1.getText().equals("")) && (!btnTTT2.getText().equals("")) && (!btnTTT3.getText().equals("")) 
-			&& (!btnTTT4.getText().equals("")) && (!btnTTT5.getText().equals("")) && (!btnTTT6.getText().equals("")) 
-			&& (!btnTTT7.getText().equals("")) && (!btnTTT8.getText().equals("")) && (!btnTTT9.getText().equals("")) )) {
-			JOptionPane.showMessageDialog(this, "Empate", "Tic Tac Toe",
-					JOptionPane.INFORMATION_MESSAGE);
-		}*/
-		
-		
 				
 	}
 		
