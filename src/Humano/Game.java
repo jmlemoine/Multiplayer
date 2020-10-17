@@ -39,7 +39,7 @@ public class Game extends JFrame {
 	public Game() {
 		
 		setResizable(false);
-		setTitle("Tic Tac Toe");
+		setTitle("Humano Vs. Humano");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 438, 331);
 		contentPane = new JPanel();
